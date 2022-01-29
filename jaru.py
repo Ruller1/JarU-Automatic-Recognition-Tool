@@ -26,7 +26,7 @@ print(f'{Fore.GREEN}     _            _   _ ')
 time.sleep(0.1)
 print(f'{Fore.YELLOW}    | | __ _ _ __| | | |')
 time.sleep(0.1)
-print(f'''{Fore.RED} _  | |/ _` | '__| | | |''')
+print(f'''{Fore.RED} _  | |/ _` | '__| | | | {Fore.GREEN}(Creado por RullerTheOne - JaggedMule14)''')
 time.sleep(0.1)
 print(f'{Fore.CYAN}| |_| | (_| | |  | |_| |')
 time.sleep(0.1)
@@ -96,35 +96,24 @@ def sigilosogrep():
 
 if conect() == True:
     print(f'{Fore.GREEN}[+]Conexión con {victimIP} exitosa')
-    if scanMode == 1:
-        print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias")
-        muyagresivo()
-    elif scanMode == 2:
-        print(f"{Fore.RED}\nIniciando escaneo agresivo..., ¿te gusta el ruido?, ¿eres un espartano?")
-        agresivo()
-    elif scanMode == 3:
-        print(f"{Fore.YELLOW}\nIniciando escaneo medio..., no te gusta tanto el ruido eh, ¿tienes miedo?")
-        tranquilomedio()
-    elif scanMode == 4:
-        print(f"{Fore.GREEN}\nIniciando escaneo tranquilo..., chicos.. vengan encontramos a un pusilánime")
-        muytranquilo()
-    elif scanMode == 5:
-        print(f"{Fore.GREEN}\nIniciando escaneo muy tranquilo..., ¿si eres tan cagón para que me usas? ;(")
-        sigiloso()
+    if scanMode == 1 and formato == 1:
+        print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+        muyagresivogrep()
+    elif scanMode == 2 and formato == 1:
+        print(f"{Fore.RED}\nIniciando escaneo agresivo..., ¿te gusta el ruido?, ¿eres un espartano?\n[!]Formato grepeable seleccionado")
+        agresivogrep()
+    elif scanMode == 3 and formato == 1:
+        print(f"{Fore.YELLOW}\nIniciando escaneo medio..., no te gusta tanto el ruido eh, ¿tienes miedo?\n[!]Formato grepeable seleccionado")
+        tranquilomediogrep()
+    elif scanMode == 4 and formato == 1:
+        print(f"{Fore.GREEN}\nIniciando escaneo tranquilo..., chicos.. vengan encontramos a un pusilánime\n[!]Formato grepeable seleccionado")
+        muytranquilogrep()
+    elif scanMode == 5 and formato == 1:
+        print(f"{Fore.GREEN}\nIniciando escaneo muy tranquilo..., ¿si eres tan cagón para que me usas?\n[!]Formato grepeable seleccionado")
+        sigilosogrep()
     else:
         print(f'{Fore.RED}[-]Elige un número del 1 al 5')
 else:
     print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
 
-###-Funciones de exportado-###
 
-if scanMode == 1 and formato == 1:
-    muyagresivogrep()
-elif scanMode == 2 and formato == 1:
-    agresivogrep()
-elif scanMode == 3 and formato == 1:
-    tranquilomediogrep()
-elif scanMode == 4 and formato == 1:
-    muytranquilogrep()
-elif scanMode == 5 and formato == 1:
-    sigilosogrep()
