@@ -9,6 +9,7 @@
 
 ###-Pregunta Y respuesta Nmap - wfuzz - dirbuster - etc-###
 
+from sqlite3 import adapt
 import sys
 import os
 from colorama import init,Fore,Style
@@ -26,7 +27,7 @@ print(f'{Fore.GREEN}     _            _   _ ')
 time.sleep(0.1)
 print(f'{Fore.YELLOW}    | | __ _ _ __| | | |')
 time.sleep(0.1)
-print(f'''{Fore.RED} _  | |/ _` | '__| | | | {Fore.GREEN}(Creado por RullerTheOne - JaggedMule14)''')
+print(f'''{Fore.RED} _  | |/ _` | '__| | | | {Fore.LIGHTBLUE_EX}(Creado por RullerTheOne - JaggedMule14)''')
 time.sleep(0.1)
 print(f'{Fore.CYAN}| |_| | (_| | |  | |_| |')
 time.sleep(0.1)
@@ -60,7 +61,7 @@ print(f'{Fore.BLUE}4.- s4L1d4 sCRiPt KiDDi3 || No me la conteiner que sos Script
 time.sleep(0.1)
 print(f'{Fore.YELLOW}5.- No quiero exportar una pija || No exportar')
 
-formato = input(f'{Fore.CYAN}\n[+]¿En qué formato deseas exportar?: ')
+formato = int(input(f'{Fore.CYAN}\n[+]¿En qué formato deseas exportar?: '))
 
 ###-Funciones-###
 
@@ -78,8 +79,6 @@ def muyagresivogrep():
 def agresivogrep():
         os.system(f'nmap -p- -sS --open -T5 -sCV -n -Pn {victimIP} -oG allports')
     
-       
-
 
 def tranquilomediogrep():
         os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP} -oG allports')
@@ -88,32 +87,43 @@ def tranquilomediogrep():
 def muytranquilogrep():
         os.system(f'nmap -T1 -sS --open -sV -n -Pn {victimIP} -oG allports')
   
-    
 
 def sigilosogrep():
         os.system(f'nmap -p- -sS --open -T0 -n -Pn {victimIP} -oG allports')
 
 
-if conect() == True:
-    print(f'{Fore.GREEN}[+]Conexión con {victimIP} exitosa')
-    if scanMode == 1 and formato == 1:
-        print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
-        muyagresivogrep()
-    elif scanMode == 2 and formato == 1:
-        print(f"{Fore.RED}\nIniciando escaneo agresivo..., ¿te gusta el ruido?, ¿eres un espartano?\n[!]Formato grepeable seleccionado")
-        agresivogrep()
-    elif scanMode == 3 and formato == 1:
-        print(f"{Fore.YELLOW}\nIniciando escaneo medio..., no te gusta tanto el ruido eh, ¿tienes miedo?\n[!]Formato grepeable seleccionado")
-        tranquilomediogrep()
-    elif scanMode == 4 and formato == 1:
-        print(f"{Fore.GREEN}\nIniciando escaneo tranquilo..., chicos.. vengan encontramos a un pusilánime\n[!]Formato grepeable seleccionado")
-        muytranquilogrep()
-    elif scanMode == 5 and formato == 1:
-        print(f"{Fore.GREEN}\nIniciando escaneo muy tranquilo..., ¿si eres tan cagón para que me usas?\n[!]Formato grepeable seleccionado")
-        sigilosogrep()
-    else:
-        print(f'{Fore.RED}[-]Elige un número del 1 al 5')
+if conect() == True and scanMode == 1 and formato == 1:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    muyagresivogrep()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 2 and formato == 1:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    agresivogrep()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 3 and formato == 1:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    tranquilomediogrep()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 4 and formato == 1:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    muytranquilogrep()
 else:
     print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
 
 
+if conect() == True and scanMode == 5 and formato == 1:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    sigilosogrep()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
