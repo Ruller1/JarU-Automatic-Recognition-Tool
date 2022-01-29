@@ -76,14 +76,19 @@ def conect():
 ###-Muy Agresivo-###
 def muyagresivogrep():
         os.system(f'nmap -p- --open -sS --min-rate 5000 -sCV -n -Pn {victimIP} -oG allports')
+        sys.exit(0)
 def muyagresivonormal():
         os.system(f'nmap -p- --open -sS --min-rate 5000 -sCV -n -Pn {victimIP} -oN allports')
+        sys.exit(0)
 def muyagresivoxml():
         os.system(f'nmap -p- --open -sS --min-rate 5000 -sCV -n -Pn {victimIP} -oX allports')
+        sys.exit(0)
 def muyagresivosk():
         os.system(f'nmap -p- --open -sS --min-rate 5000 -sCV -n -Pn {victimIP} -noob allports') ##No me se la salida de noobs ; )
+        sys.exit(0)
 def muyagresivo():
     os.system(f'nmap -p- --open -sS --min-rate 5000 -sCV -n -Pn {victimIP}')
+    sys.exit(0)
 
 
 
@@ -91,54 +96,75 @@ def muyagresivo():
 ###-Agresivo-###
 def agresivogrep():
         os.system(f'nmap -p- -sS --open -T5 -sCV -n -Pn {victimIP} -oG allports')
+        sys.exit(0)
 def agresivonormal():
         os.system(f'nmap -p- -sS --open -T5 -sCV -n -Pn {victimIP}  -oN allports')
+        sys.exit(0)
 def agresivoxml():
         os.system(f'nmap -p- -sS --open -T5 -sCV -n -Pn  {victimIP} -oX allports')
+        sys.exit(0)
 def agresivosk():
         os.system(f'nmap -p- -sS --open -T5 -sCV -n -Pn  {victimIP} -noob allports') ##No me se la salida de noobs ; )
+        sys.exit(0)
 def agresivo():
     os.system(f'nmap -p- -sS --open -T5 -sCV -n -Pn  {victimIP}')
+    sys.exit(0)
 
     
 ###-Tranquilo Medio-###
 def tranquilomediogrep():
         os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP} -oG allports')
+        sys.exit(0)
 def tranquilomediogrep():
         os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP} -oG allports')
+        sys.exit(0)
 def tranquilomedionormal():
         os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP}  -oN allports')
+        sys.exit(0)
 def tranquilomedioxml():
         os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP} -oX allports')
+        sys.exit(0)
 def tranquilomediosk():
         os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP} -noob allports') ##No me se la salida de noobs ; )
+        sys.exit(0)
 def tranquilomedio():
     os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP}')
+    sys.exit(0)
 
    
 ###-Muy Tranquilo-###
 def muytranquilogrep():
         os.system(f'nmap -T1 -sS --open -sV -n -Pn {victimIP} -oG allports')
+        sys.exit(0)
 def muytranquilonormal():
         os.system(f'nmap -T1 -sS --open -sV -n -Pn {victimIP}  -oN allports')
+        sys.exit(0)
 def muytranquiloxml():
         os.system(f'nmap -T1 -sS --open -sV -n -Pn {victimIP} -oX allports')
+        sys.exit(0)
 def muytranquilosk():
         os.system(f'nmap -T1 -sS --open -sV -n -Pn {victimIP} -noob allports') ##No me se la salida de noobs ; )
+        sys.exit(0)
 def muytranquilo():
     os.system(f'nmap -T1 -sS --open -sV -n -Pn {victimIP}')
+    sys.exit(0)
   
 ###-Sigiloso-###
 def sigilosogrep():
         os.system(f'nmap -p- -sS --open -T0 -n -Pn {victimIP} -oG allports')
+        sys.exit(0)
 def sigilosonormal():
         os.system(f'nmap -p- -sS --open -T0 -n -Pn {victimIP}  -oN allports')
+        sys.exit(0)
 def sigilosoxml():
         os.system(f'nmap -p- -sS --open -T0 -n -Pn {victimIP} -oX allports')
+        sys.exit(0)
 def sigilososk():
         os.system(f'nmap -p- -sS --open -T0 -n -Pn {victimIP} -noob allports') ##No me se la salida de noobs ; )
+        sys.exit(0)
 def sigiloso():
     os.system(f'nmap -p- -sS --open -T0 -n -Pn {victimIP}')
+    sys.exit(0)
 
 ###-Grep Recon-###
 if conect() == True and scanMode == 1 and formato == 1:
