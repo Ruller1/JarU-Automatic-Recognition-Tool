@@ -72,26 +72,75 @@ def conect():
     else:
         return False
 
+
+###-Muy Agresivo-###
 def muyagresivogrep():
         os.system(f'nmap -p- --open -sS --min-rate 5000 -sCV -n -Pn {victimIP} -oG allports')
+def muyagresivonormal():
+        os.system(f'nmap -p- --open -sS --min-rate 5000 -sCV -n -Pn {victimIP} -oN allports')
+def muyagresivoxml():
+        os.system(f'nmap -p- --open -sS --min-rate 5000 -sCV -n -Pn {victimIP} -oX allports')
+def muyagresivosk():
+        os.system(f'nmap -p- --open -sS --min-rate 5000 -sCV -n -Pn {victimIP} -noob allports') ##No me se la salida de noobs ; )
+def muyagresivo():
+    os.system(f'nmap -p- --open -sS --min-rate 5000 -sCV -n -Pn {victimIP}')
 
 
+
+
+###-Agresivo-###
 def agresivogrep():
         os.system(f'nmap -p- -sS --open -T5 -sCV -n -Pn {victimIP} -oG allports')
-    
+def agresivonormal():
+        os.system(f'nmap -p- -sS --open -T5 -sCV -n -Pn {victimIP}  -oN allports')
+def agresivoxml():
+        os.system(f'nmap -p- -sS --open -T5 -sCV -n -Pn  {victimIP} -oX allports')
+def agresivosk():
+        os.system(f'nmap -p- -sS --open -T5 -sCV -n -Pn  {victimIP} -noob allports') ##No me se la salida de noobs ; )
+def agresivo():
+    os.system(f'nmap -p- -sS --open -T5 -sCV -n -Pn  {victimIP}')
 
+    
+###-Tranquilo Medio-###
 def tranquilomediogrep():
         os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP} -oG allports')
-   
+def tranquilomediogrep():
+        os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP} -oG allports')
+def tranquilomedionormal():
+        os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP}  -oN allports')
+def tranquilomedioxml():
+        os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP} -oX allports')
+def tranquilomediosk():
+        os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP} -noob allports') ##No me se la salida de noobs ; )
+def tranquilomedio():
+    os.system(f'nmap -p- -sS --open -sV -T3 -n -Pn {victimIP}')
 
+   
+###-Muy Tranquilo-###
 def muytranquilogrep():
         os.system(f'nmap -T1 -sS --open -sV -n -Pn {victimIP} -oG allports')
+def muytranquilonormal():
+        os.system(f'nmap -T1 -sS --open -sV -n -Pn {victimIP}  -oN allports')
+def muytranquiloxml():
+        os.system(f'nmap -T1 -sS --open -sV -n -Pn {victimIP} -oX allports')
+def muytranquilosk():
+        os.system(f'nmap -T1 -sS --open -sV -n -Pn {victimIP} -noob allports') ##No me se la salida de noobs ; )
+def muytranquilo():
+    os.system(f'nmap -T1 -sS --open -sV -n -Pn {victimIP}')
   
-
+###-Sigiloso-###
 def sigilosogrep():
         os.system(f'nmap -p- -sS --open -T0 -n -Pn {victimIP} -oG allports')
+def sigilosonormal():
+        os.system(f'nmap -p- -sS --open -T0 -n -Pn {victimIP}  -oN allports')
+def sigilosoxml():
+        os.system(f'nmap -p- -sS --open -T0 -n -Pn {victimIP} -oX allports')
+def sigilososk():
+        os.system(f'nmap -p- -sS --open -T0 -n -Pn {victimIP} -noob allports') ##No me se la salida de noobs ; )
+def sigiloso():
+    os.system(f'nmap -p- -sS --open -T0 -n -Pn {victimIP}')
 
-
+###-Grep Recon-###
 if conect() == True and scanMode == 1 and formato == 1:
     print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
     print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
@@ -101,21 +150,21 @@ else:
 
 if conect() == True and scanMode == 2 and formato == 1:
     print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
-    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    print(f"{Fore.RED}\nIniciando escaneo agresivo..., ¿te gusta el ruido?, ¿eres un espartano?\n[!]Formato grepeable seleccionado")
     agresivogrep()
 else:
     print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
 
 if conect() == True and scanMode == 3 and formato == 1:
     print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
-    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    print(f"{Fore.RED}\nIniciando escaneo medio..., no te gusta tanto el ruido eh, ¿tienes miedo?\n[!]Formato grepeable seleccionado")
     tranquilomediogrep()
 else:
     print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
 
 if conect() == True and scanMode == 4 and formato == 1:
     print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
-    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    print(f"{Fore.RED}\nIniciando escaneo tranquilo..., ¿un niñito jugando con fuego?, ten cuidado, te puedes quemar..\n[!]Formato grepeable seleccionado")
     muytranquilogrep()
 else:
     print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
@@ -123,7 +172,155 @@ else:
 
 if conect() == True and scanMode == 5 and formato == 1:
     print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
-    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    print(f"{Fore.RED}\nIniciando escaneo sigiloso..., ¿si eres tan cagón para que me usas?\n[!]Formato grepeable seleccionado")
     sigilosogrep()
 else:
     print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+###-Formato Normal recon-###
+if conect() == True and scanMode == 1 and formato == 2:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    muyagresivonormal()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 2 and formato == 2:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo agresivo..., ¿te gusta el ruido?, ¿eres un espartano?\n[!]Formato grepeable seleccionado")
+    agresivonormal()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+if conect() == True and scanMode == 3 and formato == 2:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo medio..., no te gusta tanto el ruido eh, ¿tienes miedo?\n[!]Formato grepeable seleccionado")
+    tranquilomediogrep()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 4 and formato == 2:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo tranquilo..., ¿un niñito jugando con fuego?, ten cuidado, te puedes quemar..\n[!]Formato grepeable seleccionado")
+    muytranquilonormal()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 5 and formato == 2:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo muy tranquilo..., ¿si eres tan cagón para que me usas? \n[!]Formato grepeable seleccionado")
+    sigilosonormal()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+###-Formato XML recon-###
+if conect() == True and scanMode == 1 and formato == 3:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    muyagresivoxml()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 2 and formato == 3:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo agresivo..., ¿te gusta el ruido?, ¿eres un espartano?\n[!]Formato grepeable seleccionado")
+    agresivoxml()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 3 and formato == 3:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo tranquilo..., ¿un niñito jugando con fuego?, ten cuidado, te puedes quemar..\n[!]Formato grepeable seleccionado")
+    tranquilomedioxml()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+
+if conect() == True and scanMode == 4 and formato == 3:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    muytranquiloxml()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 5 and formato == 3:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo sigiloso..., ¿si eres tan cagón para que me usas?\n[!]Formato grepeable seleccionado")
+    sigilosoxml()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+###- Formato Noob - ###
+if conect() == True and scanMode == 1 and formato == 4:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Formato grepeable seleccionado")
+    muyagresivosk()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+
+if conect() == True and scanMode == 2 and formato == 4:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo agresivo..., ¿te gusta el ruido?, ¿eres un espartano?\n[!]Formato grepeable seleccionado")
+    agresivosk()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 3 and formato == 4:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo medio..., no te gusta tanto el ruido eh, ¿tienes miedo?\n[!]Formato grepeable seleccionado")
+    tranquilomediosk()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 4 and formato == 4:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo tranquilo..., ¿un niñito jugando con fuego?, ten cuidado, te puedes quemar..\n[!]Formato grepeable seleccionado")
+    muytranquilosk()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 5 and formato == 4:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo sigiloso..., ¿si eres tan cagón para que me usas?\n[!]Formato grepeable seleccionado")
+    sigilososk()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 1:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo muy agresivo..., abstente a las consecuencias\n[!]Ningún Formato Seleccionado")
+    muyagresivo()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 2:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo agresivo..., ¿te gusta el ruido?, ¿eres un espartano?\n[!]Ningún Formato Seleccionado")
+    agresivo()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 3:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo medio..., no te gusta tanto el ruido eh, ¿tienes miedo?\n[!]Ningún Formato Seleccionado")
+    tranquilomedio()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 4:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo tranquilo..., ¿un niñito jugando con fuego?, ten cuidado, te puedes quemar..\n[!]Ningún Formato Seleccionado")
+    muytranquilo()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+if conect() == True and scanMode == 5:
+    print(f'{Fore.GREEN}\n[+]Conexión con {victimIP} exitosa')
+    print(f"{Fore.RED}\nIniciando escaneo sigiloso..., ¿si eres tan cagón para que me usas? \n[!]Ningún Formato Seleccionado")
+    sigiloso()
+else:
+    print(f'{Fore.RED}[-]Conectividad con la máquina fallida')
+
+
+
+
